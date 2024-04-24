@@ -64,6 +64,7 @@ a{
 }
 
 nav ul {
+    margin: auto;
     list-style: none;
     display: flex;
     gap: 20px;

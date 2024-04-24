@@ -36,3 +36,19 @@ async function getMunicipio(municipios) {
       
     section.appendChild(h2)
   }
+
+  function salvarFavorito() {
+    const buttonFavorito = document.getElementById('buttonFavorito')
+  
+    if (buttonFavorito.value.trim() !== '') {
+      const li = document.createElement('li')
+      li.textContent = buttonFavorito.value
+  
+      salvarFavorito.appendChild(li)
+  
+      const key = `favorito_${Date.now()}`
+      localStorage.setItem(key, buttonFavorito.value)
+  
+      todoInput.value = ''
+    }
+  }
