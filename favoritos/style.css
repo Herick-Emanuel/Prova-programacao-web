@@ -23,7 +23,7 @@ body {
   }
 
 header {
-    background-color: #007bff;
+    background-color: #0074d9;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -44,7 +44,7 @@ main{
 }
 
 footer {
-  background-color: #343a40;
+  background-color: #333;
   color: #fff;
   padding: 20px;
   bottom: 0;
@@ -60,7 +60,11 @@ footer p {
 }
 
 a{
-    color: #fff;
+    color: #333;
+}
+
+a:hover{
+    opacity: 0.8;
 }
 
 nav ul {
@@ -70,7 +74,7 @@ nav ul {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #343a40;
+    background-color: #a1aab3;
     padding: 10px;
     margin-bottom: 20px;
   }
