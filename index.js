@@ -4,7 +4,7 @@ async function getEstado(estados) {
   
       const jsonData = await data.json()
   
-      generateInfoSection(jsonData.sprites, estados)
+      generateInfoSection(jsonData.view, estados)
     } catch (error) {
       console.error(error)
     }
@@ -27,16 +27,11 @@ async function getEstado(estados) {
     getSearchParams()
   })
 
-  function generateInfoSection(sprites, pokemonName) {
-    const imagens = Object.values(sprites)
-      .filter(sprite => typeof sprite === 'string')
-  
-    const h2 = document.createElement('h2')
-    h2.id = "info-estado-label"
-    h2.textContent = `Informações sobre ${nomeEstado}`
-  
-    
-    const section = document.querySelector('#info-pokemon')
-  
+  function generateInfoSection(nomeEstado) {
+
+    const ul = document.createElement('ul')
+    ul.id = "info-estado-label"
+    ul.textContent = `Informações sobre ${nomeEstado}`
+      
     section.appendChild(h2)
   }
