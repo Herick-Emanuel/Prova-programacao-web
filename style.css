@@ -1,86 +1,184 @@
 body {
-    margin: auto;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  main {
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 0 20px;
-  }
-  
-  @media (max-width: 768px) {
-    main {
-      grid-template-columns: 1fr;
-    }
-  }
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
 
-header {
-    background-color: #0074d9;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  header h1 {
-    font-size: 24px;
-  }
-  
-  header a {
-    text-decoration: none;
+header, footer {
+    background-color: #4682b4;
     color: white;
-  }
-
-main{
-    display: grid;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin-top: auto;
-}
-
-footer p {
-  margin-bottom: 0;
-}
-
-a{
-    color: #333;
-}
-
-a:hover{
-    opacity: 0.8;
-}
-
-nav ul {
-    margin: auto;
-    list-style: none;
+header form {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
-    background-color: #a1aab3;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
+    align-items: center;
+    flex-grow: 1;
+}
 
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+.search-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-container button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #4682b4;
+}
+
+.filter-icon-container {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.filter-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.filter-count {
+    margin-left: 0.5rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+dialog {
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4682b4;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 100ch;
+    width: 100%;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-item {
+    background: white;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.news-item h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.news-item p {
+    margin: 0.5rem 0;
+}
+
+.news-item .editorias {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.news-item .data-publicacao {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.news-item .leia-mais {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #4682b4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.pagination li {
+    margin: 0 0.25rem;
+}
+
+.pagination button {
+    background-color: white;
+    border: 1px solid #4682b4;
+    color: #4682b4;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.pagination button.active {
+    background-color: #4682b4;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}

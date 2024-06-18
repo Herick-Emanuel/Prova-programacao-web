@@ -1,34 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Exemplo de Estrutura de Página com Filtros e Notícias do IBGE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-       <h1>Bem vindo a página principal</h1>
+        <h1>Meu Website</h1>
+        <form action="#">
+            <div class="search-container">
+                <input id="search-input" type="text" placeholder="Buscar...">
+                <button type="submit">🔍</button>
+            </div>
+        </form>
+        <div class="filter-icon-container" onclick="openFilters()">
+            <svg class="filter-icon" fill="#f0f0f0" viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+                <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+            </svg>
+            <span class="filter-count" id="filter-count">0</span>
+        </div>
     </header>
-
-    <nav aria-label="Navegação principal">
-        <ul>
-          <li><a href="../municipios/index.html">Municipios</a></li>
-          <li><a href="../favoritos/index.html">Favoritos</a></li>
-        </ul>
-      </nav>
-
     <main>
-        <section aria-labelledby="info-estado-label">
-            <ul></ul>
-        </section>
+        <div class="content">
+            <ul class="news-list" id="news-content"></ul>
+            <ul class="news-list" id="news-content"></ul>
+            <ul class="pagination" id="pagination"></ul>
+            </div>
+            
+        </div>
     </main>
-
     <footer>
-        <p aria-label="Copyright">&copy;© 2024 Prova de Programação Web</p>
-        <p>Parabéns você chegou ao fim da página!</p>    
+        <p>&copy; 2024 Meu Website. Todos os direitos reservados.</p>
     </footer>
+    <dialog id="filter-dialog">
+        <button class="close-button" onclick="closeFilters()">✖</button>
+        <form id="filter-form" method="dialog">
+            <h2>Filtros</h2>
+            <label for="search-filter">Busca:</label>
+            <input id="search-filter" type="text" name="busca">
+            
+            <label for="tipo-filter">Tipo:</label>
+            <select id="tipo-filter" name="tipo">
+            </select>
+            
+            <label for="quantidade-filter">Quantidade:</label>
+            <select id="quantidade-filter" name="quantidade">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+            </select>
 
+            <label for="de-filter">De:</label>
+            <input id="de-filter" type="date" name="de">
+
+            <label for="ate-filter">Até:</label>
+            <input id="ate-filter" type="date" name="ate">
+
+            <button type="submit">Aplicar</button>
+        </form>
+    </dialog>
     <script src="index.js"></script>
 </body>
 </html>
